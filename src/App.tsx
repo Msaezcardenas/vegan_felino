@@ -1,7 +1,42 @@
+import { createContext, useState } from 'react';
+import './App.css';
+import { AppForm, Button, ColorRed } from './components';
+import { useFetch } from './hooks/useFetch';
+import { ApiResponse } from './types';
+
+export const ProbandoContext = createContext({});
+const url = 'http://localhost:8080/api/carts';
+
 function App() {
+  const [probandoContextValue, setProbandoContextValue] = useState(false);
+  const { data, loading, error } = useFetch<ApiResponse>(url);
+
+  console.log(data);
+
+  const submit = () => {
+    console.log('submitted');
+  };
+
+  const handleClick = () => {
+    console.log('uy me clickio todo');
+  };
+
+  const dimeHola = () => {
+    alert('hola !!');
+  };
+
   return (
     <>
-      <h1> E-commerce</h1>
+      <ProbandoContext.Provider value={{ probandoContextValue, setProbandoContextValue }}>
+        <ColorRed>
+          <Button parentMethod={dimeHola}>My Boton Rojo</Button>
+        </ColorRed>
+        <Button parentMethod={handleClick}> My Boton Normal</Button>
+
+        <AppForm>
+          <button type='submit' onClick={submit}></button>
+        </AppForm>
+      </ProbandoContext.Provider>
     </>
   );
 }
