@@ -1,14 +1,18 @@
-import { ReactNode } from "react"
+import { ReactNode } from 'react';
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 export const AppForm = ({ children }: Props) => {
-
   return (
     <form>
-      {/* inputs */}
+      <h1> Login </h1>
+      <div>
+        <label> Nombre</label>
+        <input />
+      </div>
+
       {children}
     </form>
-  )
-}
+  );
+};
