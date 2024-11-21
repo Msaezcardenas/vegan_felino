@@ -1,9 +1,9 @@
-import { Wrapper } from '../Wrappers/Navbar';
+import { Wrapper } from '../Wrappers/Landing';
 
 const Landing = () => {
   return (
     <Wrapper>
-      <div>Landing</div>;
+      <div className='container page'>Landing</div>;
     </Wrapper>
   );
 };

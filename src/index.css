@@ -26,6 +26,9 @@ html {
 
   /* ------------vars---------- */
   --nav-height: 6rem;
+  --fluid-width: 90vw;
+  --max-width: 1120px;
+  background-color: blue;
 }
 
 a {
@@ -80,4 +83,10 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.container {
+  width: var(--fluid-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
