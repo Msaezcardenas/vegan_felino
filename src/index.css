@@ -26,6 +26,7 @@ html {
 
   /* ------------vars---------- */
   --nav-height: 6rem;
+  --fixed-width: 600px;
   --fluid-width: 90vw;
   --max-width: 1120px;
   background-color: blue;
@@ -41,11 +42,7 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* display: flex; */
 }
 
 h1 {
