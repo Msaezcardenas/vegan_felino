@@ -1,11 +1,10 @@
-import { Navbar } from '../components/Navbar';
+import Banner from '../components/Banner';
 import { Wrapper } from '../Wrappers/Landing';
 
 const Landing = () => {
   return (
     <Wrapper>
-      <Navbar />
-      <div className='container page'>Landing</div>;
+      <Banner />
     </Wrapper>
   );
 };

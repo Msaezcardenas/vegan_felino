@@ -2,6 +2,7 @@ import { links } from '../utils/links';
 import { Wrapper } from '../Wrappers/Navbar';
 import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
+import cart from '../assets/images/cart.svg';
 
 export const Navbar = () => {
   return (
@@ -19,7 +20,9 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
-        <NavLink to='/carrito'>🛒</NavLink>
+        <NavLink to='/carrito' className={({ isActive }) => (isActive ? 'cart active' : 'cart ')}>
+          <img src={cart} alt='Cart' />
+        </NavLink>
       </div>
     </Wrapper>
   );
