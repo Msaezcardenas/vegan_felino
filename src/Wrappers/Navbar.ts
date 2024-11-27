@@ -6,6 +6,7 @@ export const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
 
   .nav-center {
     display: flex;
@@ -39,8 +40,8 @@ export const Wrapper = styled.nav`
   ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
-    column-gap: 5rem;
+    justify-content: space-evenly;
+    width: 60%;
   }
 
   li {
@@ -73,6 +74,7 @@ export const Wrapper = styled.nav`
   @media (min-width: 992px) {
     position: sticky;
     top: 0;
+    z-index: 2;
     .nav-center {
       display: flex;
       width: 90vw;

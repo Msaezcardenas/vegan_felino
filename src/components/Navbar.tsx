@@ -12,8 +12,8 @@ export const Navbar = () => {
           <Logo />
         </NavLink>
         <ul>
-          {links.map((item) => (
-            <li>
+          {links.map((item, index) => (
+            <li key={index}>
               <NavLink to={item.href} className={({ isActive }) => (isActive ? 'active' : '')}>
                 {item.label}
               </NavLink>

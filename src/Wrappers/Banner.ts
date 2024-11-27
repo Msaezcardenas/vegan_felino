@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     background: #f5f5f5; /* Fondo del slide (ajústalo a tu diseño) */
-    height: 300px; /* Altura específica del slide */
+    height: 500px; /* Altura específica del slide */
   }
 
   .swiper-slide img {
@@ -41,12 +41,12 @@ export const Wrapper = styled.div`
   }
 
   .swiper-pagination-bullet {
-    background: var(--color-secondary);
-    width: 10px;
-    height: 10px;
+    background: var(--color-primary);
+    width: 12px;
+    height: 12px;
   }
 
   .swiper-pagination-bullet-active {
-    background: var(--color-secondary);
+    background: var(--color-primary);
   }
 `;
