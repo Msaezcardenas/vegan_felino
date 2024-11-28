@@ -25,12 +25,16 @@ export const Wrapper = styled.div`
   }
 
   .product-info {
-    padding: 20px;
+    padding: 30px 20px;
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
   }
 
   .product-info h2 {
     font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 10px;
   }
 
@@ -42,6 +46,6 @@ export const Wrapper = styled.div`
 
   .product-price {
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
   }
 `;

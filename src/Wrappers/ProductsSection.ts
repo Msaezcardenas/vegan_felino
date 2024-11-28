@@ -8,10 +8,11 @@ export const Wrapper = styled.section`
   align-items: center;
   height: 90vh;
   text-align: center;
+  margin-bottom: 7rem;
 
   h1 {
     font-size: 36px;
-    font-weight: 800;
+    font-weight: 500;
     position: relative;
     display: inline-block;
   }

@@ -46,11 +46,13 @@ export const Wrapper = styled.nav`
 
   li {
     font-size: 1.125rem;
-
     position: relative;
     text-decoration: none;
     padding: 10px 5px;
     transition: color 0.3s ease;
+    a {
+      font-weight: 400;
+    }
     :hover {
       color: var(--color-secondary);
       /* background-color: #f2f2f2; */
