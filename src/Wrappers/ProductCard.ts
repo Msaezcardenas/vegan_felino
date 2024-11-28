@@ -3,15 +3,25 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   /* src/styles/ProductCard.css */
   .product-card {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 600px;
+  }
+
+  .img-container {
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
   }
 
   .product-image {
-    width: 150px;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   .product-info {

@@ -6,7 +6,8 @@ const listProducts = [{ title: 'Seitan' }, { title: 'Tutitos' }, { title: 'Chori
 const ProductsSection = () => {
   return (
     <Wrapper>
-      <h1>Products</h1>
+      <h1> Productos</h1>
+
       <div className='cards-container'>
         {listProducts.map((item) => {
           return <ProductCard item={item} />;
