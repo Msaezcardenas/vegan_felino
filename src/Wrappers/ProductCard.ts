@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
     object-fit: cover;
     height: 250px;
     width: 100%;
+    position: relative;
   }
 
   .product-image {
@@ -47,5 +48,71 @@ export const Wrapper = styled.div`
   .product-price {
     font-size: 1.2rem;
     font-weight: 500;
+  }
+
+  .btn-product {
+    height: 50px;
+    font-size: 1.7rem;
+    color: black;
+    width: 50px;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .btn-product:hover {
+    transform: scale(1.1);
+    background: #f0f0f0;
+  }
+
+  .action-buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    padding: 5px 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+    width: 50%;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .increment-button,
+  .decrement-button {
+    background: #fff;
+    border: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .increment-button:hover,
+  .decrement-button:hover {
+    transform: scale(1.1);
+    background: #f0f0f0;
+  }
+
+  .quantity {
+    font-size: 16px;
+    font-weight: bold;
   }
 `;

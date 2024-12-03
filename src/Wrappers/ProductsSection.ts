@@ -4,11 +4,15 @@ export const Wrapper = styled.section`
   padding: 0 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: start;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   text-align: center;
   margin-bottom: 7rem;
+
+  .title {
+    padding: 4rem 0;
+  }
 
   h1 {
     font-size: 36px;

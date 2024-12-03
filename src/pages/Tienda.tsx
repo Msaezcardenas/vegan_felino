@@ -1,5 +1,12 @@
+import ProductsSection from '../components/ProductsSection';
+import { Wrapper } from '../Wrappers/Tienda';
+
 function Tienda() {
-  return <div>Tienda</div>;
+  return (
+    <Wrapper>
+      <ProductsSection />
+    </Wrapper>
+  );
 }
 
 export default Tienda;

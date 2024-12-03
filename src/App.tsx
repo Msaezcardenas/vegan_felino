@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { HomeLayout, Landing, Tienda, Recetas, PuntosDeVenta, Blog, Carrito } from './pages';
+import { loader as loaderProduct } from './components/ProductsSection';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       {
         path: 'tienda',
         element: <Tienda />,
+        loader: loaderProduct,
       },
       {
         path: 'recetas',
