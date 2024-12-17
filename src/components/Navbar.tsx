@@ -6,8 +6,7 @@ import cart from '../assets/images/cart.svg';
 import { useAppSelector } from '../hooks/store';
 
 export const Navbar = () => {
-  const quantity = useAppSelector((state) => state.cartState.cartItems.length);
-  console.log('_____-quantity:', quantity);
+  const quantity = useAppSelector((state) => state.cartState.numItemsInCart);
 
   return (
     <Wrapper>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Wrapper } from '../Wrappers/ProductCard';
 import img from '../assets/images/seitan-1.jpg';
-import { addItem } from '../features/cart/cartSlice';
+import { addItem, removeItem } from '../features/cart/cartSlice';
 import { useAppDispatch } from '../hooks/store';
 import { CartItem } from '../utils/types';
 
@@ -10,13 +10,13 @@ interface CardProps {
     title: string;
     price: number;
     _id: string;
-    amount: number;
   };
 }
 
 const ProductCard: React.FC<CardProps> = ({ item }) => {
   const [amount, setAmount] = useState<number>(0);
   const dispatch = useAppDispatch();
+
   const cartProduct: CartItem = {
     title: item.title,
     price: item.price,
@@ -29,7 +29,10 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
     dispatch(addItem(cartProduct));
   };
 
-  const handleDecrement = () => setAmount((prev) => (prev > 0 ? prev - 1 : 0));
+  const removeToCart = () => {
+    setAmount((prev) => (prev > 0 ? prev - 1 : 0));
+    dispatch(removeItem(item._id));
+  };
 
   return (
     <Wrapper>
@@ -47,7 +50,7 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
             </button>
           ) : (
             <div className='action-buttons '>
-              <button className='decrement-button' onClick={handleDecrement}>
+              <button className='decrement-button' onClick={removeToCart}>
                 🗑️
               </button>
               <span className='quantity'>{amount}</span>

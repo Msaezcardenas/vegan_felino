@@ -14,22 +14,24 @@ export const cartSlice = createSlice({
   reducers: {
     addItem: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
-      console.log(newItem);
-
       const item = state.cartItems.find((item) => item.productID === newItem.productID);
-
       if (item) {
-        console.log('ingresa IF');
         item.amount = newItem.amount;
       } else {
-        console.log('ingresa ELSE');
         state.cartItems.push(newItem);
       }
       state.numItemsInCart++;
     },
+    removeItem: (state, action: PayloadAction<string>) => {
+      const cartID = action.payload;
+      state.cartItems.filter((item) => {
+        return item.productID !== cartID;
+      });
+      state.numItemsInCart--;
+    },
   },
 });
 
-export const { addItem } = cartSlice.actions;
+export const { addItem, removeItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
