@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { Wrapper } from '../Wrappers/ProductCard';
 import img from '../assets/images/seitan-1.jpg';
 import { addItem, removeItem } from '../features/cart/cartSlice';
-import { useAppDispatch } from '../hooks/store';
+import { useAppDispatch, useAppSelector } from '../hooks/store';
 import { CartItem } from '../utils/types';
 
 interface CardProps {
@@ -14,8 +13,12 @@ interface CardProps {
 }
 
 const ProductCard: React.FC<CardProps> = ({ item }) => {
-  const [amount, setAmount] = useState<number>(0);
   const dispatch = useAppDispatch();
+
+  const cartItem = useAppSelector((state) => state.cartState.cartItems.find((product) => product.productID === item._id));
+  const amount = cartItem ? cartItem.amount : 0;
+
+  console.log('amount_____', amount);
 
   const cartProduct: CartItem = {
     title: item.title,
@@ -25,12 +28,10 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
   };
 
   const addToCart = () => {
-    setAmount((prev) => prev + 1);
     dispatch(addItem(cartProduct));
   };
 
   const removeToCart = () => {
-    setAmount((prev) => (prev > 0 ? prev - 1 : 0));
     dispatch(removeItem(item._id));
   };
 

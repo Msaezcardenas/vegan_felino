@@ -9,8 +9,7 @@ const HomeLayout = () => {
   return (
     <>
       <Navbar />
-      <div className='align-element py-20'>{isPageLoading ? <Loading /> : <Outlet />}</div>
-      {/* <Outlet /> */}
+      <main className='align-element py-20'>{isPageLoading ? <Loading /> : <Outlet />}</main>
       <Footer />
     </>
   );

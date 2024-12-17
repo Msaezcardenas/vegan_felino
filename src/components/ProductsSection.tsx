@@ -3,8 +3,6 @@ import { Wrapper } from '../Wrappers/ProductsSection';
 import { useLoaderData } from 'react-router-dom';
 import { ProductsResponse } from '../utils/types';
 
-//const listProducts = [{ title: 'Seitan' }, { title: 'Tutitos' }, { title: 'Chorizos' }, { title: 'Falabel' }];
-
 const ProductsSection = () => {
   const { data } = useLoaderData() as ProductsResponse;
   console.log(data);
