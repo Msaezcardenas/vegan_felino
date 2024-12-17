@@ -1,24 +1,17 @@
 import ProductCard from './ProductCard';
 import { Wrapper } from '../Wrappers/ProductsSection';
-import { LoaderFunction, useLoaderData } from 'react-router-dom';
-import { customFetch } from '../utils/customFetch';
+import { useLoaderData } from 'react-router-dom';
 import { ProductsResponse } from '../utils/types';
 
-const listProducts = [{ title: 'Seitan' }, { title: 'Tutitos' }, { title: 'Chorizos' }, { title: 'Falabel' }];
-
-const url = '/products';
-
-export const loader: LoaderFunction = async (): Promise<ProductsResponse> => {
-  const response = await customFetch<ProductsResponse>(url);
-
-  console.log(response);
-
-  return { ...response.data };
-};
+//const listProducts = [{ title: 'Seitan' }, { title: 'Tutitos' }, { title: 'Chorizos' }, { title: 'Falabel' }];
 
 const ProductsSection = () => {
-  const { data: products } = useLoaderData() as ProductsResponse;
-  console.log(products);
+  const { data } = useLoaderData() as ProductsResponse;
+  console.log(data);
+
+  if (!data || data.length === 0) {
+    return <h2>No hay datos disponibles.</h2>;
+  }
 
   return (
     <Wrapper>
@@ -27,7 +20,7 @@ const ProductsSection = () => {
       </div>
 
       <div className='cards-container'>
-        {products.map((item, index) => {
+        {data.map((item, index) => {
           return <ProductCard key={index} item={item} />;
         })}
       </div>

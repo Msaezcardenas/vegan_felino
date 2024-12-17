@@ -1,18 +1,35 @@
 import { useState } from 'react';
 import { Wrapper } from '../Wrappers/ProductCard';
 import img from '../assets/images/seitan-1.jpg';
+import { addItem } from '../features/cart/cartSlice';
+import { useAppDispatch } from '../hooks/store';
+import { CartItem } from '../utils/types';
 
 interface CardProps {
   item: {
     title: string;
+    price: number;
+    _id: string;
+    amount: number;
   };
 }
 
 const ProductCard: React.FC<CardProps> = ({ item }) => {
-  const [quantity, setQuantity] = useState<number>(0);
+  const [amount, setAmount] = useState<number>(0);
+  const dispatch = useAppDispatch();
+  const cartProduct: CartItem = {
+    title: item.title,
+    price: item.price,
+    productID: item._id,
+    amount,
+  };
 
-  const handleIncrement = () => setQuantity((prev) => prev + 1);
-  const handleDecrement = () => setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
+  const addToCart = () => {
+    setAmount((prev) => prev + 1);
+    dispatch(addItem(cartProduct));
+  };
+
+  const handleDecrement = () => setAmount((prev) => (prev > 0 ? prev - 1 : 0));
 
   return (
     <Wrapper>
@@ -20,12 +37,12 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
         <div className='product-info'>
           <h2>{item.title}</h2>
           <p className='product-description'>Producto alimenticio elaborado principalmente a partir de gluten de trigo...</p>
-          <p className='product-price'>Precio: $ 8.600</p>
+          <p className='product-price'>{item.price}</p>
         </div>
         <div className='img-container'>
           <img src={img} alt='Seitan Tradicional' className='product-image' />
-          {quantity === 0 ? (
-            <button className='btn-product' onClick={handleIncrement}>
+          {amount === 0 ? (
+            <button className='btn-product' onClick={addToCart}>
               +
             </button>
           ) : (
@@ -33,8 +50,8 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
               <button className='decrement-button' onClick={handleDecrement}>
                 🗑️
               </button>
-              <span className='quantity'>{quantity}</span>
-              <button className='increment-button' onClick={handleIncrement}>
+              <span className='quantity'>{amount}</span>
+              <button className='increment-button' onClick={addToCart}>
                 +
               </button>
             </div>

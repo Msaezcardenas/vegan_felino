@@ -4,17 +4,9 @@ export const Wrapper = styled.footer`
   height: 100px;
   background-color: var(--color-secondary);
   position: relative;
+  margin-top: auto;
 
-  .custom-shape-divider-bottom-1732802773 {
-    /* position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0; */
-  }
-
-  .custom-shape-divider-bottom-1732802773 svg {
+  .custom-shape-divider svg {
     position: absolute;
     display: block;
     width: 100%;
@@ -23,7 +15,13 @@ export const Wrapper = styled.footer`
     transform: rotateY(180deg);
   }
 
-  .custom-shape-divider-bottom-1732802773 .shape-fill {
+  .custom-shape-divider .shape-fill {
     fill: #1c7c54;
+  }
+
+  .footer-container {
+    position: relative; /* Asegura que el contenido del footer esté bien posicionado */
+    z-index: 1;
+    bottom: 0;
   }
 `;

@@ -1,6 +1,3 @@
-import Banner from '../components/Banner';
-import ProductsSection from '../components/ProductsSection';
-import { Wrapper } from '../Wrappers/Landing';
 import { LoaderFunction } from 'react-router-dom';
 import { customFetch } from '../utils/customFetch';
 import { ProductsResponse } from '../utils/types';
@@ -10,23 +7,16 @@ export const loader: LoaderFunction = async (): Promise<ProductsResponse> => {
   try {
     const response = await customFetch<ProductsResponse>(url);
 
-    console.log(response.data);
+    if (!response?.data?.data || !Array.isArray(response.data.data)) {
+      throw new Error('Datos inválidos en la respuesta');
+    }
 
-    return { ...response.data };
+    return response.data;
   } catch (error) {
+    console.log('INGRESA ERROR');
+
     console.log(error);
 
     throw new Response('Error loading data', { status: 500 });
   }
 };
-
-const Landing = () => {
-  return (
-    <Wrapper>
-      <Banner />
-      <ProductsSection />
-    </Wrapper>
-  );
-};
-
-export default Landing;
