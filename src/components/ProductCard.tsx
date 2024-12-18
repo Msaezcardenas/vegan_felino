@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Wrapper } from '../Wrappers/ProductCard';
 import img from '../assets/images/seitan-1.jpg';
 import { addItem, removeItem } from '../features/cart/cartSlice';
@@ -38,11 +39,13 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
   return (
     <Wrapper>
       <div className='product-card'>
-        <div className='product-info'>
-          <h2>{item.title}</h2>
-          <p className='product-description'>Producto alimenticio elaborado principalmente a partir de gluten de trigo...</p>
-          <p className='product-price'>{item.price}</p>
-        </div>
+        <Link to={`/${item._id}`}>
+          <div className='product-info'>
+            <h2>{item.title}</h2>
+            <p className='product-description'>Producto alimenticio elaborado principalmente a partir de gluten de trigo...</p>
+            <p className='product-price'>${item.price}</p>
+          </div>
+        </Link>
         <div className='img-container'>
           <img src={img} alt='Seitan Tradicional' className='product-image' />
           {amount === 0 ? (

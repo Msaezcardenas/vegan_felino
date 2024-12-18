@@ -2,7 +2,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { HomeLayout, Landing, Tienda, Recetas, PuntosDeVenta, Blog, Carrito } from './pages';
 import { loader as loaderProduct } from './loaders/productLoader';
+import { loader as singleProductLoader } from './components/SingleProduct.tsx';
 import ErrorElement from './components/ErrorElement';
+import SingleProduct from './components/SingleProduct';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,14 @@ const router = createBrowserRouter([
       {
         path: 'tienda',
         element: <Tienda />,
+        loader: loaderProduct,
         errorElement: <ErrorElement />,
+      },
+      {
+        path: '/:id',
+        element: <SingleProduct />,
+        errorElement: <ErrorElement />,
+        loader: singleProductLoader,
       },
       {
         path: 'recetas',

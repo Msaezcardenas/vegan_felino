@@ -24,8 +24,10 @@ export const Navbar = () => {
           ))}
         </ul>
         <NavLink to='/carrito' className={({ isActive }) => (isActive ? 'cart active' : 'cart ')}>
-          <span className='quantity'>{quantity}</span>
-          <img src={cart} alt='Cart' />
+          <div className='cart-counter'>
+            <span className='quantity'>{quantity > 0 ? quantity : ''}</span>
+            <img src={cart} alt='Cart' />
+          </div>
         </NavLink>
       </div>
     </Wrapper>

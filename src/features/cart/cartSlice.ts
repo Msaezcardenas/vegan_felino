@@ -24,9 +24,11 @@ export const cartSlice = createSlice({
       state.numItemsInCart++;
     },
     removeItem: (state, action: PayloadAction<string>) => {
-      const cartID = action.payload;
+      const productID = action.payload;
+      const productFinded = state.cartItems.find((item) => item.productID === productID);
+      if (productFinded) productFinded.amount--;
       state.cartItems.filter((item) => {
-        return item.productID !== cartID;
+        return item.productID !== productID;
       });
       state.numItemsInCart--;
     },

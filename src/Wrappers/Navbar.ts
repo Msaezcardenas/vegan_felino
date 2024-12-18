@@ -19,6 +19,16 @@ export const Wrapper = styled.nav`
     margin-right: 0.5rem;
   }
 
+  .cart-counter {
+    display: flex;
+    align-items: center;
+    width: 40px; /* Tamaño fijo */
+    height: 16px; /* Tamaño fijo */
+    .quantity {
+      width: 10px;
+    }
+  }
+
   .cart {
     display: flex;
     align-items: center;

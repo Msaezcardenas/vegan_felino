@@ -27,3 +27,7 @@ export type CartState = {
   orderTotal: number;
   numItemsInCart: number;
 };
+
+export type SingleProductResponse = {
+  data: Product;
+};
