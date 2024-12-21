@@ -3,10 +3,17 @@ import { Wrapper } from '../Wrappers/Navbar';
 import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 import cart from '../assets/images/cart.svg';
-import { useAppSelector } from '../hooks/store';
+import { toggleStatusTab } from '../features/cart/cartSlice';
+import { useAppDispatch, useAppSelector } from '../hooks/store';
 
 export const Navbar = () => {
-  const quantity = useAppSelector((state) => state.cartState.numItemsInCart);
+  const { numItemsInCart } = useAppSelector((state) => state.cartState);
+
+  const dispatch = useAppDispatch();
+  const handleOpenTabCart = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation(); // Detiene la propagación del evento
+    dispatch(toggleStatusTab());
+  };
 
   return (
     <Wrapper>
@@ -23,12 +30,12 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
-        <NavLink to='/carrito' className={({ isActive }) => (isActive ? 'cart active' : 'cart ')}>
+        <button type='button' className='cart' onClick={handleOpenTabCart}>
           <div className='cart-counter'>
-            <span className='quantity'>{quantity > 0 ? quantity : ''}</span>
+            <span className='quantity'>{numItemsInCart > 0 ? numItemsInCart : ''}</span>
             <img src={cart} alt='Cart' />
           </div>
-        </NavLink>
+        </button>
       </div>
     </Wrapper>
   );

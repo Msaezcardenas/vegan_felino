@@ -5,7 +5,6 @@ import { ProductsResponse } from '../utils/types';
 
 const ProductsSection = () => {
   const { data } = useLoaderData() as ProductsResponse;
-  console.log(data);
 
   if (!data || data.length === 0) {
     return <h2>No hay datos disponibles.</h2>;

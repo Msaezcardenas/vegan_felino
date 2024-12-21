@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
   height: var(--nav-height);
-  background-color: orange;
+  background-color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,6 +34,7 @@ export const Wrapper = styled.nav`
     align-items: center;
     justify-content: center;
     padding: 12px;
+    height: 60px;
     border-radius: 50%;
     transition: background-color 0.5s ease;
   }
@@ -60,8 +61,10 @@ export const Wrapper = styled.nav`
     text-decoration: none;
     padding: 10px 5px;
     transition: color 0.3s ease;
+
     a {
-      font-weight: 400;
+      font-weight: 500;
+      letter-spacing: var(--letter-spacing);
     }
     :hover {
       color: var(--color-secondary);
@@ -81,6 +84,12 @@ export const Wrapper = styled.nav`
       background-color: var(--color-secondary); /* Indicador para el enlace activo */
       transition: width 0.3s ease;
     }
+  }
+
+  button {
+    cursor: pointer;
+    background-color: var(--color-bg-light);
+    border: none;
   }
 
   @media (min-width: 992px) {

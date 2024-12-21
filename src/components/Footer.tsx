@@ -17,11 +17,11 @@ function Footer() {
           <div className='contact'>
             <h4>Contacto</h4>
             <div>
-              <PiEnvelope size={24} />
+              <PiEnvelope size={30} />
               felinovegano@gmail.com
             </div>
             <div>
-              <PiWhatsappLogo size={24} />
+              <PiWhatsappLogo size={30} />
               +56948951827
             </div>
           </div>
@@ -29,10 +29,10 @@ function Footer() {
             <h4>Siguenos!</h4>
             <div>
               <a href='https://www.instagram.com/veganfelino/' target='_blank' rel='noopener noreferrer' className='text-pink-600'>
-                <PiInstagramLogo size={24} />
+                <PiInstagramLogo size={32} />
               </a>
               <a href='https://www.tiktok.com/@veganfelino?_t=8sLp1gMJYLW&_r=1' target='_blank' rel='noopener noreferrer' className='text-pink-600'>
-                <PiTiktokLogoBold size={24} />
+                <PiTiktokLogoBold size={32} />
               </a>
             </div>
           </div>

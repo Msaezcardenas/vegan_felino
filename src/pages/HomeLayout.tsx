@@ -2,6 +2,7 @@ import Footer from '../components/Footer';
 import Loading from '../components/Loading';
 import { Navbar } from '../components/Navbar';
 import { Outlet, useNavigation } from 'react-router-dom';
+import Carrito from './Carrito';
 
 const HomeLayout = () => {
   const navigation = useNavigation();
@@ -9,7 +10,9 @@ const HomeLayout = () => {
   return (
     <>
       <Navbar />
-      <main className='align-element py-20'>{isPageLoading ? <Loading /> : <Outlet />}</main>
+      <div className='align-element py-20'>{isPageLoading ? <Loading /> : <Outlet />}</div>
+      <Carrito />
+      {/* <Outlet /> */}
       <Footer />
     </>
   );

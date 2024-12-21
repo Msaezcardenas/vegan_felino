@@ -6,6 +6,7 @@ const defaultState: CartState = {
   cartTotal: 0,
   orderTotal: 0,
   numItemsInCart: 0,
+  statusTab: false,
 };
 
 export const cartSlice = createSlice({
@@ -32,9 +33,19 @@ export const cartSlice = createSlice({
       });
       state.numItemsInCart--;
     },
+    toggleStatusTab: (state) => {
+      console.log('INGRESA A TOGGLE');
+
+      if (state.statusTab === false) {
+        state.statusTab = true;
+      } else {
+        state.statusTab = false;
+      }
+      console.log(state.statusTab);
+    },
   },
 });
 
-export const { addItem, removeItem } = cartSlice.actions;
+export const { addItem, removeItem, toggleStatusTab } = cartSlice.actions;
 
 export default cartSlice.reducer;

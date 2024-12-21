@@ -59,7 +59,7 @@ html {
   --text-color: var(--black);
 
   /* ------------vars---------- */
-  --heigth-footer-svg: 61px;
+  --heigth-footer-svg: 40px;
   --nav-height: 6rem;
   --fixed-width: 600px;
   --fluid-width: 90vw;

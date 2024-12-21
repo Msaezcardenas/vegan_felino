@@ -1,4 +1,10 @@
+import { Wrapper } from '../Wrappers/Loading';
+
 function Loading() {
-  return <div>Loading</div>;
+  return (
+    <Wrapper>
+      <div className='spinner'></div>
+    </Wrapper>
+  );
 }
 export default Loading;
