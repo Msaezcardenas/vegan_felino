@@ -93,6 +93,22 @@ export const Wrapper = styled.nav`
     border: none;
   }
 
+  .btn-login {
+    background: none;
+  }
+
+  .login-cart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    svg {
+      width: 30px;
+      height: auto;
+    }
+  }
+
   @media (min-width: 992px) {
     position: sticky;
     top: 0;

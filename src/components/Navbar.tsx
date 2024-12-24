@@ -5,6 +5,7 @@ import Logo from './Logo';
 import cart from '../assets/images/cart.svg';
 import { toggleStatusTab } from '../features/cart/cartSlice';
 import { useAppDispatch, useAppSelector } from '../hooks/store';
+import { PiUserBold } from 'react-icons/pi';
 
 export const Navbar = () => {
   const { numItemsInCart } = useAppSelector((state) => state.cartState);
@@ -30,12 +31,18 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button type='button' className={`${numItemsInCart > 0 ? 'cart active' : 'cart'}`} onClick={handleOpenTabCart}>
-          <div className='cart-counter'>
-            <span className='quantity'>{numItemsInCart > 0 ? numItemsInCart : ''}</span>
-            <img src={cart} alt='Cart' />
-          </div>
-        </button>
+        <div className='login-cart'>
+          <NavLink className='btn-login' to='/Login'>
+            <PiUserBold />
+          </NavLink>
+
+          <button type='button' className={`${numItemsInCart > 0 ? 'cart active' : 'cart'}`} onClick={handleOpenTabCart}>
+            <div className='cart-counter'>
+              <span className='quantity'>{numItemsInCart > 0 ? numItemsInCart : ''}</span>
+              <img src={cart} alt='Cart' />
+            </div>
+          </button>
+        </div>
       </div>
     </Wrapper>
   );
