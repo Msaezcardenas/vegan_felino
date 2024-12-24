@@ -30,7 +30,7 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button type='button' className='cart' onClick={handleOpenTabCart}>
+        <button type='button' className={`${numItemsInCart > 0 ? 'cart active' : 'cart'}`} onClick={handleOpenTabCart}>
           <div className='cart-counter'>
             <span className='quantity'>{numItemsInCart > 0 ? numItemsInCart : ''}</span>
             <img src={cart} alt='Cart' />

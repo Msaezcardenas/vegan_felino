@@ -19,6 +19,8 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
   const cartItem = useAppSelector((state) => state.cartState.cartItems.find((product) => product.productID === item._id));
   const amount = cartItem ? cartItem.amount : 0;
 
+  console.log(cartItem?.amount);
+
   const cartProduct: CartItem = {
     title: item.title,
     price: item.price,

@@ -37,6 +37,7 @@ export const Wrapper = styled.nav`
     height: 60px;
     border-radius: 50%;
     transition: background-color 0.5s ease;
+    background: none;
   }
   .cart img {
     width: 30px;
