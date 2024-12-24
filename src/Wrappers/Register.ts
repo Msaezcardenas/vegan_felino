@@ -6,12 +6,12 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  .container-login {
+  .container-register {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 600px;
-    height: 60vh;
+    height: 90vh;
     background-color: var(--white);
     border-radius: 10px;
     padding: 2rem;
@@ -43,6 +43,13 @@ export const Wrapper = styled.div`
     box-shadow: 0 0 5px rgba(255, 127, 0, 0.5); /* Agrega un efecto de brillo */
   }
 
+  .btns {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .btn {
     border: none;
     cursor: pointer;
@@ -57,24 +64,22 @@ export const Wrapper = styled.div`
   }
 
   .btn-login {
+    color: var(--black);
+    margin-top: 2rem;
+    text-decoration: underline;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+  .btn-register {
     background-color: var(--color-primary);
     color: var(--white);
     height: 32px;
     transition: background-color 0.6s ease;
   }
-  .btn-register {
-    text-align: center;
-    color: var(--color-primary);
-    background-color: var(--white);
-    border: 2px solid var(--primary-300);
-
-    background-color: transparent;
-  }
 
   .btn-register:hover {
-    background-color: var(--primary-100);
-    border: 1px solid var(--primary-500);
-    color: var(--primary-500);
+    background-color: var(--primary-700); /* Color más oscuro al pasar el mouse */
   }
 
   button:hover {

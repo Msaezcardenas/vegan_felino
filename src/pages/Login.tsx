@@ -1,4 +1,4 @@
-import { Form } from 'react-router-dom';
+import { Form, NavLink } from 'react-router-dom';
 import { Wrapper } from '../Wrappers/Login';
 
 const Login = () => {
@@ -15,7 +15,12 @@ const Login = () => {
             <label> Contraseña: </label>
             <input type='text' />
           </div>
-          <button type='submit'> Entrar</button>
+          <button type='submit' className='btn btn-login'>
+            Entrar
+          </button>
+          <NavLink to='/register' className='btn btn-register'>
+            Registrarse
+          </NavLink>
         </Form>
       </div>
     </Wrapper>

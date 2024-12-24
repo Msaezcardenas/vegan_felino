@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import { HomeLayout, Landing, Tienda, Recetas, PuntosDeVenta, Blog, Login } from './pages';
+import { HomeLayout, Landing, Tienda, Recetas, PuntosDeVenta, Blog, Login, Register } from './pages';
 import { loader as loaderProduct } from './loaders/productLoader';
 import { loader as singleProductLoader } from './components/SingleProduct.tsx';
 import ErrorElement from './components/ErrorElement';
@@ -47,6 +47,12 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />,
+    errorElement: <ErrorElement />,
+    // action: loginUser(store),
+  },
+  {
+    path: '/register',
+    element: <Register />,
     errorElement: <ErrorElement />,
     // action: loginUser(store),
   },
