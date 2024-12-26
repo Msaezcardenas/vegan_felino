@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
 import img from '../assets/images/seitan-1.jpg';
 import { Wrapper } from '../Wrappers/RecetasCard';
+import Ingredients from './IngredientsSection';
+import Preparation from './Preparation';
 
 const RecetasCard = () => {
   return (
@@ -10,12 +13,13 @@ const RecetasCard = () => {
         </div>
         <div className='receta-info'>
           <h2> Seitan Saltado</h2>
-          <div className='ingredientes'>
-            <h3> Ingredientes:</h3>
-          </div>
-          <div className='preparacion'>
-            <h3> Preparación:</h3>
-          </div>
+          <Ingredients />
+          <Preparation />
+        </div>
+        <div className='link-container'>
+          <Link to='/' className='seguir-leyendo'>
+            Seguir Leyendo +
+          </Link>
         </div>
       </div>
     </Wrapper>

@@ -10,18 +10,21 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
-    height: 60vh;
+    width: 800px;
+    height: 80vh;
     background-color: var(--white);
     border-radius: 10px;
-    padding: 2rem;
+    padding: 1rem 2rem;
     box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
   }
-  h1 {
-    font-weight: 500;
+
+  img {
+    width: 180px;
+    height: auto;
+    margin-right: 0.5rem;
   }
+
   .form {
-    padding: 2rem;
     width: 400px;
   }
   .input-form {
@@ -34,9 +37,10 @@ export const Wrapper = styled.div`
     width: '100%';
     border: 1px solid var(--primary-300);
     border-radius: 10px;
-    height: 30px;
+    height: 50px;
     margin-top: 10px;
     padding: 0 1rem;
+    font-size: 20px;
   }
   input:focus {
     outline: none; /* Quita el borde negro predeterminado */

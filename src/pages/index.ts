@@ -7,3 +7,4 @@ export { default as Blog } from './Blog';
 export { default as Carrito } from './Carrito';
 export { default as Login } from './Login';
 export { default as Register } from './Register';
+export { default as DetailRecipe } from './DetailRecipe';

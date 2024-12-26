@@ -1,11 +1,14 @@
-import { Form, NavLink } from 'react-router-dom';
+import { Form, Link, NavLink } from 'react-router-dom';
 import { Wrapper } from '../Wrappers/Register';
+import Logo from '../components/Logo';
 
 const Register = () => {
   return (
     <Wrapper>
       <div className='container-register'>
-        <h1> Registrarse</h1>
+        <Link to='/'>
+          <Logo />
+        </Link>
         <Form className='form'>
           <div className='input-form'>
             <label> Nombre: </label>

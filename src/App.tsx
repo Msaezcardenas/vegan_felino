@@ -1,10 +1,10 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import { HomeLayout, Landing, Tienda, Recetas, PuntosDeVenta, Blog, Login, Register } from './pages';
+import { HomeLayout, Landing, Tienda, Recetas, PuntosDeVenta, Blog, Login, Register, DetailRecipe } from './pages';
 import { loader as loaderProduct } from './loaders/productLoader';
-import { loader as singleProductLoader } from './components/SingleProduct.tsx';
+// import { loader as singleProductLoader } from './components/SingleProduct.tsx';
 import ErrorElement from './components/ErrorElement';
-import SingleProduct from './components/SingleProduct';
+import SingleProduct from './pages/SingleProduct';
 
 const router = createBrowserRouter([
   {
@@ -25,14 +25,20 @@ const router = createBrowserRouter([
         errorElement: <ErrorElement />,
       },
       {
-        path: '/:id',
+        path: 'tienda/:id',
         element: <SingleProduct />,
         errorElement: <ErrorElement />,
-        loader: singleProductLoader,
+        // loader: singleProductLoader,
       },
       {
         path: 'recetas',
         element: <Recetas />,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: 'recetas/:recetaId',
+        element: <DetailRecipe />,
+        errorElement: <ErrorElement />,
       },
       {
         path: 'puntosDeVenta',
