@@ -6,6 +6,8 @@ import { loader as loaderProduct } from './loaders/productLoader';
 import ErrorElement from './components/ErrorElement';
 import SingleProduct from './pages/SingleProduct';
 
+import { action as registerUser } from './pages/Register';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -60,7 +62,7 @@ const router = createBrowserRouter([
     path: '/register',
     element: <Register />,
     errorElement: <ErrorElement />,
-    // action: loginUser(store),
+    action: registerUser,
   },
 ]);
 
