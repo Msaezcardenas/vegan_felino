@@ -80,6 +80,8 @@ html {
 }
 body.no-scroll {
   overflow: hidden; /* Deshabilita el scroll */
+  position: fixed; /* Fija la posición de la página */
+  width: 100%;
 }
 
 main {

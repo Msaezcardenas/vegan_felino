@@ -3,20 +3,115 @@ import styled from 'styled-components';
 export const Wrapper = styled.nav`
   height: var(--nav-height);
   background-color: var(--color-primary);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
 
-  .nav-center {
-    display: flex;
-    align-items: center;
+  .links-container {
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo con sombra */
+    /* opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 999; /* Colocar detrás del sidebar */
+  }
+  .links-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo con sombra */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 035s ease;
+    z-index: 999; /* Colocar detrás del sidebar */
+    overflow: hidden;
   }
 
-  img {
-    width: 120px;
-    height: auto;
-    margin-right: 0.5rem;
+  .links-container.open {
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    pointer-events: all;
+  }
+
+  body.no-scroll {
+    overflow: hidden; /* Evita el scroll */
+  }
+
+  .nav-links {
+    position: fixed; /* Fijo en la pantalla */
+    top: 0;
+    left: 0;
+    width: 70%; /* Ocupar todo el ancho */
+    height: 100%; /* Ocupar todo el alto */
+    right: -200px; /* Inicialmente oculta */
+    width: 200px;
+    height: 100%;
+    background-color: #ffecb3; /* Fondo del menú */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+    transform: translateX(-100%); /* Fuera de la pantalla inicialmente */
+    transition: transform 0.3s ease-in-out; /* Animación suave */
+    z-index: 1000; /* Por encima de otros elementos */
+  }
+
+  .nav-links.open {
+    transform: translateX(0); /* Cuando está abierto */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-center {
+    display: flex;
+    width: 100%;
+    padding: 0 12px;
+    justify-content: space-between;
+    img {
+      width: 80px;
+    }
+  }
+
+  .logo-mobile {
+    display: flex;
+    img {
+      height: auto;
+      width: 60px;
+    }
+  }
+  .mobile-menu-btn {
+    background-color: var(--color-primary);
+    display: block; /* Mostrar el botón hamburguesa por defecto */
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    svg {
+      width: 30px;
+      height: auto;
+    }
+  }
+  .login-cart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+      width: 30px;
+      height: auto;
+    }
   }
 
   .cart-counter {
@@ -33,12 +128,15 @@ export const Wrapper = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
     height: 60px;
     border-radius: 50%;
     transition: background-color 0.5s ease;
     background: none;
+    svg {
+      height: 80px;
+    }
   }
+
   .cart img {
     width: 30px;
     margin: 0;
@@ -97,19 +195,15 @@ export const Wrapper = styled.nav`
     background: none;
   }
 
-  .login-cart {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 120px;
-    svg {
-      width: 30px;
-      height: auto;
-    }
-  }
-
   @media (min-width: 992px) {
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    .nav-links.open {
+      display: none;
+    }
+
     position: sticky;
     top: 0;
     z-index: 2;
@@ -118,5 +212,17 @@ export const Wrapper = styled.nav`
       width: 90vw;
       justify-content: space-between;
     }
+
+    /* .login-cart {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 120px;
+      svg {
+        width: 30px;
+        height: auto;
+      }
+    } */
   }
 `;

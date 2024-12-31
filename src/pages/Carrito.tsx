@@ -48,13 +48,6 @@ const Carrito = () => {
     };
   }, [statusTab, dispatch]);
 
-  // const cartProduct: CartItem = {
-  //   title: item.title,
-  //   price: item.price,
-  //   productID: item._id,
-  //   amount,
-  // };
-
   const addToCart = (item: CartItem) => {
     dispatch(addItem(item));
   };

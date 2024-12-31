@@ -32,19 +32,19 @@ const Register = () => {
         <Form className='form' method='post'>
           <div className='input-form'>
             <label> Nombre: </label>
-            <input type='text' name='first_name' />
+            <input type='text' name='first_name' required />
           </div>
           <div className='input-form'>
             <label> Apellido: </label>
-            <input type='text' name='last_name' />
+            <input type='text' name='last_name' required />
           </div>
           <div className='input-form'>
             <label> Email: </label>
-            <input type='email' name='email' />
+            <input type='email' name='email' required />
           </div>
           <div className='input-form'>
             <label> Contraseña: </label>
-            <input type='password' name='password' />
+            <input type='password' name='password' required />
           </div>
           <div className='btns'>
             <button type='submit' className='btn btn-register'>
