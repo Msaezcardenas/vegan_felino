@@ -10,18 +10,6 @@ export const Wrapper = styled.nav`
   box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
 
   .links-container {
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo con sombra */
-    /* opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 999; /* Colocar detrás del sidebar */
-  }
-  .links-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -213,16 +201,26 @@ export const Wrapper = styled.nav`
       justify-content: space-between;
     }
 
-    /* .login-cart {
+    .links-container {
       display: flex;
       flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      width: 120px;
-      svg {
-        width: 30px;
-        height: auto;
-      }
-    } */
+      width: 80%;
+      visibility: visible;
+      opacity: 1;
+      background-color: transparent;
+      height: auto;
+      position: relative;
+    }
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      transform: translateX(0);
+      height: auto;
+      background-color: var(--color-primary);
+      box-shadow: none;
+      justify-content: space-evenly;
+      position: relative;
+    }
   }
 `;
