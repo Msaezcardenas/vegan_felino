@@ -3,9 +3,13 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   .sidebar-header {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 50px 16px;
+    h1 {
+      font-size: 24px;
+    }
     /* border-bottom: 1px solid #ccc; */
   }
   .close-button {
@@ -17,13 +21,12 @@ export const Wrapper = styled.div`
     border-radius: 50%;
     font-size: 30px;
     font-weight: 500;
-    padding: 1rem 1.3rem;
     cursor: pointer;
     color: var(--black);
     transition: color 0.2s ease;
     right: 0;
     top: 0;
-    padding: 1rem;
+    padding: 10px;
   }
 
   .sidebar-overlay {
@@ -49,8 +52,8 @@ export const Wrapper = styled.div`
   .sidebar {
     position: fixed;
     top: 0;
-    right: -600px; /* Inicialmente oculta */
-    width: 600px;
+    right: -200px; /* Inicialmente oculta */
+    width: 200px;
     height: 100%;
     background-color: var(--color-bg-light);
     box-shadow: var(--shadow-1);
@@ -143,4 +146,41 @@ export const Wrapper = styled.div`
       object-fit: cover;
     }
   }
+
+  @media (min-width: 992px) {
+    position: fixed;
+    top: 0;
+    right: -600px; /* Inicialmente oculta */
+    width: 600px;
+    height: 100%;
+    background-color: var(--color-bg-light);
+    box-shadow: var(--shadow-1);
+    transition: right 0.8s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .sidebar-content {
+    text-align: center;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  /* .close-button {
+    position: fixed;
+    display: flex;
+    background: none;
+    border: none;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 1rem 1.3rem;
+    cursor: pointer;
+    color: var(--black);
+    transition: color 0.2s ease;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+  } */
 `;
