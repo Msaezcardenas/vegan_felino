@@ -188,13 +188,24 @@ export const Wrapper = styled.nav`
       display: none;
     }
 
+    .login-cart {
+      width: 80px;
+      justify-content: space-between;
+    }
+
+    .nav-center {
+      img {
+        width: 120px;
+      }
+    }
+
     .nav-links.open {
       display: none;
     }
 
-    position: sticky;
-    top: 0;
-    z-index: 2;
+    li {
+      font-size: 1.3rem;
+    }
     .nav-center {
       display: flex;
       width: 90vw;
@@ -204,12 +215,13 @@ export const Wrapper = styled.nav`
     .links-container {
       display: flex;
       flex-direction: row;
-      width: 80%;
+      width: 60%;
       visibility: visible;
       opacity: 1;
       background-color: transparent;
       height: auto;
       position: relative;
+      align-self: center;
     }
     .nav-links {
       display: flex;
@@ -221,6 +233,8 @@ export const Wrapper = styled.nav`
       box-shadow: none;
       justify-content: space-evenly;
       position: relative;
+      align-items: center;
+      padding: 0;
     }
   }
 `;
