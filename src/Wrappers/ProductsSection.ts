@@ -46,7 +46,13 @@ export const Wrapper = styled.section`
 
   .cards-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 60px;
+  }
+
+  @media (min-width: 992px) {
+    .cards-container {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 `;

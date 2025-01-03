@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.footer`
-  height: 500px;
+  height: 400px;
   background-color: var(--color-secondary);
   position: relative;
   margin-top: auto;
@@ -29,14 +29,21 @@ export const Wrapper = styled.footer`
   }
 
   .footer-contact {
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
     color: var(--grey-50);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 80%;
-    padding: 0.5rem;
+    padding: 2rem;
     letter-spacing: 1.5px;
     font-weight: 500;
+    height: 100%;
+    h4 {
+      font-weight: 700;
+    }
   }
 
   .contact {
@@ -66,6 +73,22 @@ export const Wrapper = styled.footer`
     }
     a {
       color: var(--grey-50);
+    }
+  }
+
+  @media (min-width: 992px) {
+    height: 400px;
+
+    .footer-contact {
+      flex-direction: row;
+      align-items: center;
+      font-weight: 500;
+      padding: 0.5rem;
+      font-size: 24px;
+      height: 80%;
+      h4 {
+        font-size: 28px;
+      }
     }
   }
 `;

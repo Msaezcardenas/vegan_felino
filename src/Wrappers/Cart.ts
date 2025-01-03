@@ -52,8 +52,8 @@ export const Wrapper = styled.div`
   .sidebar {
     position: fixed;
     top: 0;
-    right: -200px; /* Inicialmente oculta */
-    width: 200px;
+    right: -250px; /* Inicialmente oculta */
+    width: 250px;
     height: 100%;
     background-color: var(--color-bg-light);
     box-shadow: var(--shadow-1);
@@ -147,6 +147,26 @@ export const Wrapper = styled.div`
     }
   }
 
+  .cart-item {
+    display: grid;
+    grid-template-areas:
+      'imagen info'
+      'imagen info'
+      'controls controls';
+  }
+
+  .cart-img {
+    grid-area: imagen;
+  }
+
+  .cart-info {
+    grid-area: info;
+  }
+
+  .quantity-controls {
+    grid-area: controls;
+  }
+
   @media (min-width: 992px) {
     position: fixed;
     top: 0;
@@ -158,12 +178,27 @@ export const Wrapper = styled.div`
     transition: right 0.8s ease;
     z-index: 1000;
     overflow-y: auto;
-  }
 
-  .sidebar-content {
-    text-align: center;
-    padding: 10px;
-    overflow-y: auto;
+    .sidebar-content {
+      text-align: center;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0;
+      box-shadow: var(--shadow-1);
+      text-align: start;
+      border-bottom: 1px solid var(--grey-300);
+    }
+
+    .sidebar {
+      right: -500px;
+      width: 500px;
+    }
   }
 
   /* .close-button {

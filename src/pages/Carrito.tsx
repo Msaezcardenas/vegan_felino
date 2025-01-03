@@ -82,8 +82,7 @@ const Carrito = () => {
                 </div>
                 <div className='cart-info'>
                   <h3>{item.title}</h3>
-                  <h2>Precio: ${item.price}</h2>
-                  <p> Cantidad: {item.amount}</p>
+                  <h2>Total: ${item.price}</h2>
                 </div>
                 <div className='quantity-controls'>
                   <button onClick={() => removeToCart(item)}>-</button>

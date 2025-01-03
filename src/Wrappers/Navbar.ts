@@ -116,10 +116,12 @@ export const Wrapper = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
+    height: 50px;
     border-radius: 50%;
     transition: background-color 0.5s ease;
     background: none;
+    margin-left: 4px;
+    padding: 5px;
     svg {
       height: 80px;
     }
@@ -235,6 +237,11 @@ export const Wrapper = styled.nav`
       position: relative;
       align-items: center;
       padding: 0;
+    }
+    .cart {
+      height: 60px;
+      margin-left: 20px;
+      padding: 10px;
     }
   }
 `;

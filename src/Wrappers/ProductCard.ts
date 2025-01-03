@@ -4,17 +4,17 @@ export const Wrapper = styled.div`
   /* src/styles/ProductCard.css */
   .product-card {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1.5fr 1.5fr;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 600px;
+    width: 300px;
+    height: 200px;
   }
 
   .img-container {
     object-fit: cover;
-    height: 250px;
     width: 100%;
     position: relative;
   }
@@ -26,21 +26,20 @@ export const Wrapper = styled.div`
   }
 
   .product-info {
-    padding: 30px 20px;
-    margin-left: 20px;
+    padding: 0.8rem;
     display: flex;
     flex-direction: column;
     text-align: left;
   }
 
   .product-info h2 {
-    font-size: 1.5rem;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
   }
 
   .product-description {
-    font-size: 1rem;
+    font-size: 12px;
     color: #666;
     margin-bottom: 15px;
   }
@@ -59,7 +58,7 @@ export const Wrapper = styled.div`
     border: 0;
     position: absolute;
     right: 10px;
-    bottom: 10px;
+    bottom: 38px;
     background-color: white;
     font-weight: 600;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -73,16 +72,16 @@ export const Wrapper = styled.div`
 
   .action-buttons {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 40px;
+    right: 20px;
     display: flex;
     align-items: center;
     gap: 5px;
     background-color: white;
-    padding: 5px 20px;
+    padding: 5px 5px;
     border-radius: 10px;
     justify-content: space-between;
-    width: 50%;
+    width: 100px;
   }
 
   .hidden {
@@ -114,5 +113,47 @@ export const Wrapper = styled.div`
   .quantity {
     font-size: 16px;
     font-weight: bold;
+  }
+
+  @media (min-width: 992px) {
+    .product-card {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 600px;
+      height: auto;
+    }
+
+    .product-info {
+      padding: 30px 20px;
+      margin-left: 20px;
+    }
+
+    .img-container {
+      height: 250px;
+    }
+
+    .product-info h2 {
+      font-size: 1.5rem;
+    }
+
+    .product-description {
+      font-size: 1rem;
+    }
+
+    .btn-product {
+      right: 10px;
+      bottom: 10px;
+    }
+
+    .action-buttons {
+      bottom: 10px;
+      right: 10px;
+      padding: 5px 20px;
+      width: 50%;
+    }
   }
 `;
