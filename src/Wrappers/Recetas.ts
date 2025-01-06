@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   height: 100%;
-  padding: 2rem;
   margin-bottom: 2rem;
 
   .page {
@@ -10,14 +9,20 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 2rem 0.5rem;
   }
 
   .recetas-container {
-    padding: 2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0 16px; /* Añade un espacio interno (opcional) */
+    box-sizing: border-box; /* Asegúrate de que el padding no rompa el diseño */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    max-width: 100%; /* Asegúrate de que el contenedor no exceda el ancho */
+    margin: 0 auto; /* Centra el contenedor */
+    overflow-x: hidden;
   }
 
   h1 {
@@ -50,5 +55,13 @@ export const Wrapper = styled.div`
   h1:hover::after,
   h1:hover::before {
     width: 100px;
+  }
+
+  @media (min-width: 992px) {
+    .recetas-container {
+      padding: 2rem 6rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 5rem;
+    }
   }
 `;

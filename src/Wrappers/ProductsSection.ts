@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  padding: 0 40px;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -46,6 +46,8 @@ export const Wrapper = styled.section`
 
   .cards-container {
     display: grid;
+    width: 20%;
+    justify-content: center;
     grid-template-columns: 1fr;
     gap: 60px;
   }

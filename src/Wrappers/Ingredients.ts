@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   .ingredientes {
-    padding: 2rem 0;
+    padding: 0.5rem 0;
   }
   h3 {
     font-weight: 500;
@@ -20,5 +20,8 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 992px) {
+    .ingredientes {
+      padding: 0.5rem 0.5rem;
+    }
   }
 `;

@@ -7,6 +7,8 @@ const defaultState: CartState = {
   orderTotal: 0,
   numItemsInCart: 0,
   statusTab: false,
+  productTotalPrice: 0,
+  totalPayment: 0,
 };
 
 export const cartSlice = createSlice({
@@ -59,6 +61,7 @@ export const cartSlice = createSlice({
         state.numItemsInCart--;
       }
     },
+    calculateTotals: (state, action: PayloadAction<{ productID: string; amount: number }>) => {},
   },
 });
 

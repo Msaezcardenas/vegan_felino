@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   border-radius: 10px;
   .receta-card {
-    width: 400px;
-    height: 550px;
+    width: 100%;
+    height: 450px;
     border-radius: 10px;
     background-color: var(--white);
     overflow: hidden;
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
   .container-img {
     overflow: hidden;
-    height: 250px;
+    height: 200px;
   }
 
   img {
@@ -31,7 +31,7 @@ export const Wrapper = styled.div`
 
   .receta-info {
     background-color: var(--white);
-    padding: 1.5rem;
+    padding: 1rem;
     h2 {
       text-align: center;
       margin-bottom: 1rem;
@@ -46,7 +46,7 @@ export const Wrapper = styled.div`
     bottom: 0rem;
     left: 0;
     width: 100%;
-    height: 8rem; /* Ajusta según la cantidad de difuminado */
+    height: 9rem; /* Ajusta según la cantidad de difuminado */
     background: linear-gradient(0deg, white 40%, rgba(247, 247, 247, 0) 100%);
     pointer-events: none; /* No interfiere con los clics en el contenido */
   }
@@ -54,8 +54,7 @@ export const Wrapper = styled.div`
   .seguir-leyendo {
     position: absolute;
     bottom: 1rem; /* Coloca el enlace al final */
-    left: 38%;
-    transform: translateX(-90%);
+    transform: translateX(10%);
     color: var(--color-primary);
     font-size: 1rem;
     font-weight: 600;
@@ -64,5 +63,11 @@ export const Wrapper = styled.div`
 
   .seguir-leyendo:hover {
     color: var(--primary-600);
+  }
+
+  @media (min-width: 992px) {
+    .seguir-leyendo {
+      transform: translateX(16%);
+    }
   }
 `;

@@ -135,6 +135,7 @@ export const Wrapper = styled.nav`
 
   .cart.active {
     background-color: var(--color-bg-light);
+    box-shadow: var(--shadow-1);
   }
 
   ul {

@@ -76,21 +76,32 @@ const Carrito = () => {
               </button>
             </div>
             {cartItems.map((item) => (
-              <div className='cart-item'>
-                <div className='cart-img'>
-                  <img src={img} alt='Seitan Tradicional' className='product-image' />
-                </div>
-                <div className='cart-info'>
-                  <h3>{item.title}</h3>
-                  <h2>Total: ${item.price}</h2>
-                </div>
-                <div className='quantity-controls'>
-                  <button onClick={() => removeToCart(item)}>-</button>
-                  <span>{item.amount}</span>
-                  <button onClick={() => addToCart(item)}>+</button>
+              <div className='cart'>
+                <div className='cart-item'>
+                  <div className='cart-img'>
+                    <img src={img} alt='Seitan Tradicional' className='product-image' />
+                  </div>
+                  <div className='cart-info'>
+                    <h2>{item.title}</h2>
+                    <div className='price'>
+                      <div className='quantity-controls'>
+                        <button onClick={() => removeToCart(item)}>-</button>
+                        <span>{item.amount}</span>
+                        <button onClick={() => addToCart(item)}>+</button>
+                      </div>
+                      <h3>${item.price}</h3>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
+            <div className='payment'>
+              <div className='total'>
+                <h2>Total:</h2>
+                <p>$ 54.000 </p>
+              </div>
+              <button className='btn btn-pay'> Ir a Pagar </button>
+            </div>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   /* src/styles/ProductCard.css */
   .product-card {
     display: grid;
-    grid-template-columns: 1.5fr 1.5fr;
+    grid-template-columns: 2fr 1.5fr;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
   }
 
   .product-info {
-    padding: 0.8rem;
+    padding: 1.5rem 0.8rem;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -58,7 +58,7 @@ export const Wrapper = styled.div`
     border: 0;
     position: absolute;
     right: 10px;
-    bottom: 38px;
+    bottom: 10px;
     background-color: white;
     font-weight: 600;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -72,7 +72,7 @@ export const Wrapper = styled.div`
 
   .action-buttons {
     position: absolute;
-    bottom: 40px;
+    bottom: 10px;
     right: 20px;
     display: flex;
     align-items: center;
@@ -81,7 +81,7 @@ export const Wrapper = styled.div`
     padding: 5px 5px;
     border-radius: 10px;
     justify-content: space-between;
-    width: 100px;
+    width: 95px;
   }
 
   .hidden {
@@ -93,8 +93,8 @@ export const Wrapper = styled.div`
     background: #fff;
     border: 0;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,7 +123,7 @@ export const Wrapper = styled.div`
       border-radius: 8px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      width: 600px;
+      width: 500px;
       height: auto;
     }
 
@@ -152,8 +152,14 @@ export const Wrapper = styled.div`
     .action-buttons {
       bottom: 10px;
       right: 10px;
-      padding: 5px 20px;
+      padding: 5px 10px;
       width: 50%;
+    }
+
+    .increment-button,
+    .decrement-button {
+      width: 30px;
+      height: 30px;
     }
   }
 `;

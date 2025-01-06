@@ -20,9 +20,8 @@ export const Wrapper = styled.div`
   }
 
   img {
-    width: 120px;
+    width: 130px;
     height: auto;
-    margin-right: 0.5rem;
   }
   h1 {
     font-weight: 500;

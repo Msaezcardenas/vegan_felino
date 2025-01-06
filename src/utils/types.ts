@@ -27,6 +27,8 @@ export type CartState = {
   orderTotal: number;
   numItemsInCart: number;
   statusTab: boolean;
+  productTotalPrice: number;
+  totalPayment: number;
 };
 
 export type SingleProductResponse = {
