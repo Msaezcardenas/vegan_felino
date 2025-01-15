@@ -1,25 +1,27 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
+  position: fixed;
   height: var(--nav-height);
-  background-color: var(--color-primary);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  background-color: var(--color-bg-light);
 
   .links-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo con sombra */
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.6s ease, visibility 035s ease;
-    z-index: 999; /* Colocar detrás del sidebar */
+    z-index: 999;
     overflow: hidden;
   }
 
@@ -31,32 +33,31 @@ export const Wrapper = styled.nav`
   }
 
   body.no-scroll {
-    overflow: hidden; /* Evita el scroll */
+    overflow: hidden;
   }
 
   .nav-links {
-    position: fixed; /* Fijo en la pantalla */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 70%; /* Ocupar todo el ancho */
-    height: 100%; /* Ocupar todo el alto */
-    right: -200px; /* Inicialmente oculta */
+    width: 70%;
+    height: 100%;
+    right: -200px;
     width: 200px;
     height: 100%;
-    background-color: #ffecb3; /* Fondo del menú */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
-    transform: translateX(-100%); /* Fuera de la pantalla inicialmente */
-    transition: transform 0.3s ease-in-out; /* Animación suave */
-    z-index: 1000; /* Por encima de otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
   }
 
   .nav-links.open {
-    transform: translateX(0); /* Cuando está abierto */
+    transform: translateX(0);
     transition: transform 0.3s ease-in-out;
   }
 
@@ -79,7 +80,7 @@ export const Wrapper = styled.nav`
   }
   .mobile-menu-btn {
     background-color: var(--color-primary);
-    display: block; /* Mostrar el botón hamburguesa por defecto */
+    display: block;
     background: transparent;
     border: none;
     font-size: 1.8rem;
@@ -105,8 +106,8 @@ export const Wrapper = styled.nav`
   .cart-counter {
     display: flex;
     align-items: center;
-    width: 40px; /* Tamaño fijo */
-    height: 16px; /* Tamaño fijo */
+    width: 40px;
+    height: 16px;
     .quantity {
       width: 10px;
     }
@@ -158,7 +159,6 @@ export const Wrapper = styled.nav`
     }
     :hover {
       color: var(--color-secondary);
-      /* background-color: #f2f2f2; */
     }
     a.active {
       color: var(--color-secondary);
@@ -171,7 +171,7 @@ export const Wrapper = styled.nav`
       left: 0;
       width: 100%;
       height: 3px;
-      background-color: var(--color-secondary); /* Indicador para el enlace activo */
+      background-color: var(--color-secondary);
       transition: width 0.3s ease;
     }
   }
@@ -232,7 +232,6 @@ export const Wrapper = styled.nav`
       width: 100%;
       transform: translateX(0);
       height: auto;
-      background-color: var(--color-primary);
       box-shadow: none;
       justify-content: space-evenly;
       position: relative;

@@ -12,7 +12,6 @@ const HomeLayout = () => {
       <Navbar />
       <div className='align-element py-20'>{isPageLoading ? <Loading /> : <Outlet />}</div>
       <Carrito />
-      {/* <Outlet /> */}
       <Footer />
     </>
   );

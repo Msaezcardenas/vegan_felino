@@ -7,8 +7,7 @@ const defaultState: CartState = {
   orderTotal: 0,
   numItemsInCart: 0,
   statusTab: false,
-  productTotalPrice: 0,
-  totalPayment: 0,
+  totalCart: 0,
 };
 
 export const cartSlice = createSlice({
@@ -16,19 +15,20 @@ export const cartSlice = createSlice({
   initialState: defaultState,
   reducers: {
     addItem: (state, action: PayloadAction<CartItem>) => {
-      console.log('additem :', state.numItemsInCart);
       const newItem = action.payload;
       const item = state.cartItems.find((item) => item.productID === newItem.productID);
       if (item) {
         item.amount++;
+        item.totalPriceItem = Number(item.price) * item.amount;
         state.numItemsInCart++;
+        state.totalCart += Number(newItem.price);
       } else {
         newItem.amount = 1;
+        newItem.totalPriceItem = Number(newItem.price);
         state.cartItems.push(newItem);
         state.numItemsInCart++;
+        state.totalCart += Number(newItem.price) * newItem.amount;
       }
-
-      console.log('additem', state.numItemsInCart);
     },
     removeItem: (state, action: PayloadAction<string>) => {
       const productID = action.payload;
@@ -37,12 +37,15 @@ export const cartSlice = createSlice({
       if (productFinded) {
         if (productFinded.amount > 0) {
           productFinded.amount -= 1; // Reducir cantidad
+          productFinded.totalPriceItem = Number(productFinded.price) * productFinded.amount;
           state.numItemsInCart--;
+          state.totalCart -= Number(productFinded.price);
         }
         // La eliminación del ítem se realizará solo si su cantidad es 0 y ocurre en otro momento
         if (productFinded.amount <= 0) {
           console.log('remove menor a cero');
           state.cartItems = state.cartItems.filter((item) => item.productID !== productID);
+          state.totalCart -= Number(productFinded.price);
         }
       }
     },
@@ -61,7 +64,6 @@ export const cartSlice = createSlice({
         state.numItemsInCart--;
       }
     },
-    calculateTotals: (state, action: PayloadAction<{ productID: string; amount: number }>) => {},
   },
 });
 

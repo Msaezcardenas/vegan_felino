@@ -1,15 +1,19 @@
 import { Link } from 'react-router-dom';
 import { Wrapper } from '../Wrappers/ProductCard';
-import img from '../assets/images/seitan-1.jpg';
+//import img from '../assets/images/seitan-1.jpg';
 import { addItem, removeItem } from '../features/cart/cartSlice';
 import { useAppDispatch, useAppSelector } from '../hooks/store';
 import { CartItem } from '../utils/types';
+import { formatAmountRegex } from '../utils/formatAmount';
 
 interface CardProps {
   item: {
     title: string;
     price: number;
     _id: string;
+    description: string;
+    image: string;
+    totalPrice: number;
   };
 }
 
@@ -19,13 +23,14 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
   const cartItem = useAppSelector((state) => state.cartState.cartItems.find((product) => product.productID === item._id));
   const amount = cartItem ? cartItem.amount : 0;
 
-  console.log(cartItem?.amount);
-
   const cartProduct: CartItem = {
     title: item.title,
     price: item.price,
+    description: item.description,
     productID: item._id,
     amount,
+    totalPriceItem: item.totalPrice,
+    image: item.image,
   };
 
   const addToCart = () => {
@@ -42,12 +47,12 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
         <Link to={`/${item._id}`}>
           <div className='product-info'>
             <h2>{item.title}</h2>
-            <p className='product-description'>Producto alimenticio elaborado principalmente a partir de gluten de trigo...</p>
-            <p className='product-price'>${item.price}</p>
+            <p className='product-description'>{item.description}</p>
+            <p className='product-price'>${formatAmountRegex(item.price)}</p>
           </div>
         </Link>
         <div className='img-container'>
-          <img src={img} alt='Seitan Tradicional' className='product-image' />
+          <img src={`http://localhost:8080${item.image}`} alt='Seitan Tradicional' className='product-image' />
           {amount === 0 ? (
             <button className='btn-product' onClick={addToCart}>
               +

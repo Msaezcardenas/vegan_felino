@@ -3,8 +3,9 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import seitan_1 from '../assets/images/seitan-1.jpg';
-import seitan_3 from '../assets/images/seitan-3.jpg';
+import banner from '../assets/images/banner.jpeg';
+import banner2 from '../assets/images/banner2.jpeg';
+import banner3 from '../assets/images/banner3.jpeg';
 import { Wrapper } from '../Wrappers/Banner';
 
 const Carousel = () => {
@@ -23,13 +24,13 @@ const Carousel = () => {
         loop={true} // Permitir que el carrusel sea infinito
       >
         <SwiperSlide>
-          <img src={seitan_1} alt='Slide 1' />
+          <img src={banner} alt='Slide 1' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={seitan_3} alt='Slide 2' />
+          <img src={banner2} alt='Slide 2' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={seitan_3} alt='Slide 3' />
+          <img src={banner3} alt='Slide 3' />
         </SwiperSlide>
       </Swiper>
     </Wrapper>

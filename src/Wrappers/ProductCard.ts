@@ -128,8 +128,7 @@ export const Wrapper = styled.div`
     }
 
     .product-info {
-      padding: 30px 20px;
-      margin-left: 20px;
+      margin-left: 12px;
     }
 
     .img-container {
@@ -141,7 +140,7 @@ export const Wrapper = styled.div`
     }
 
     .product-description {
-      font-size: 1rem;
+      font-size: 14px;
     }
 
     .btn-product {

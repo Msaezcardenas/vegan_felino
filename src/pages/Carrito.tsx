@@ -2,16 +2,17 @@ import { useEffect, useRef } from 'react';
 import { toggleStatusTab, addItem, removeItem, updateItemAmount } from '../features/cart/cartSlice';
 import { useAppDispatch, useAppSelector } from '../hooks/store';
 import { Wrapper } from '../Wrappers/Cart';
-import img from '../assets/images/seitan-1.jpg';
 import { PiXBold } from 'react-icons/pi';
 import { CartItem } from '../utils/types';
+import { formatAmountRegex } from '../utils/formatAmount';
 
 const Carrito = () => {
   const sidebarRef = useRef<HTMLDivElement | null>(null);
-  // const cartItem = useAppSelector((state) => state.cartState.cartItems.find((product) => product.productID === item._id));
-  // const amount = cartItem ? cartItem.amount : 0;
+  const totalCart = useAppSelector((state) => state.cartState.totalCart);
+  console.log('total Cart', totalCart);
 
   const { statusTab, cartItems, numItemsInCart } = useAppSelector((state) => state.cartState);
+  console.log('total item', cartItems);
 
   const dispatch = useAppDispatch();
   const handleOpenTabCart = () => {
@@ -76,10 +77,10 @@ const Carrito = () => {
               </button>
             </div>
             {cartItems.map((item) => (
-              <div className='cart'>
+              <div className='cart' key={item.title}>
                 <div className='cart-item'>
                   <div className='cart-img'>
-                    <img src={img} alt='Seitan Tradicional' className='product-image' />
+                    <img src={`http://localhost:8080${item.image}`} alt='Seitan Tradicional' className='product-image' />
                   </div>
                   <div className='cart-info'>
                     <h2>{item.title}</h2>
@@ -89,19 +90,23 @@ const Carrito = () => {
                         <span>{item.amount}</span>
                         <button onClick={() => addToCart(item)}>+</button>
                       </div>
-                      <h3>${item.price}</h3>
+                      <h3>${formatAmountRegex(item.totalPriceItem)}</h3>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
-            <div className='payment'>
-              <div className='total'>
-                <h2>Total:</h2>
-                <p>$ 54.000 </p>
+            {totalCart > 0 ? (
+              <div className='payment'>
+                <div className='total'>
+                  <h2>Total:</h2>
+                  <p>${formatAmountRegex(totalCart)}</p>
+                </div>
+                <button className='btn btn-pay'> Ir a Pagar </button>
               </div>
-              <button className='btn btn-pay'> Ir a Pagar </button>
-            </div>
+            ) : (
+              <h3>El carrito esta vacio</h3>
+            )}
           </div>
         </div>
       </div>

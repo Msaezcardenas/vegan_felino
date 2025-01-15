@@ -22,7 +22,6 @@ export const Navbar = () => {
   const toggleMobileMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setIsMobileMenuOpen((prev) => !prev);
-    console.log('toggleMenu:', !isMobileMenuOpen);
   };
 
   const closeMobileMenu = () => {
@@ -30,21 +29,16 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    console.log('useEffect:', isMobileMenuOpen);
-
     const handleClickOutside = (event: MouseEvent) => {
-      // Verifica si el clic ocurrió fuera del menú y si está abierto
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsMobileMenuOpen(false);
       }
     };
 
-    // Agregar el evento sólo si el menú está abierto
     if (isMobileMenuOpen) {
       document.addEventListener('click', handleClickOutside);
     }
 
-    // Elimina el evento al desmontar el componente o cerrar el menú
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };

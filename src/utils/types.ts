@@ -11,6 +11,8 @@ export interface Product {
   title: string;
   status: boolean;
   stock: number;
+  image: string;
+  totalPrice: number;
   __v: number;
 }
 
@@ -19,6 +21,9 @@ export type CartItem = {
   price: number;
   productID: string;
   amount: number;
+  description: string;
+  totalPriceItem: number;
+  image: string;
 };
 
 export type CartState = {
@@ -27,8 +32,7 @@ export type CartState = {
   orderTotal: number;
   numItemsInCart: number;
   statusTab: boolean;
-  productTotalPrice: number;
-  totalPayment: number;
+  totalCart: number;
 };
 
 export type SingleProductResponse = {
