@@ -1,18 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { toggleStatusTab, addItem, removeItem, updateItemAmount } from '../features/cart/cartSlice';
-import { useAppDispatch, useAppSelector } from '../hooks/store';
 import { Wrapper } from '../Wrappers/Cart';
 import { PiXBold } from 'react-icons/pi';
 import { CartItem } from '../utils/types';
 import { formatAmountRegex } from '../utils/formatAmount';
+import { useAppDispatch, useAppSelector } from '../store';
 
 const Carrito = () => {
   const sidebarRef = useRef<HTMLDivElement | null>(null);
   const totalCart = useAppSelector((state) => state.cartState.totalCart);
-  console.log('total Cart', totalCart);
 
   const { statusTab, cartItems, numItemsInCart } = useAppSelector((state) => state.cartState);
-  console.log('total item', cartItems);
 
   const dispatch = useAppDispatch();
   const handleOpenTabCart = () => {

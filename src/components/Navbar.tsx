@@ -3,13 +3,14 @@ import { Wrapper } from '../Wrappers/Navbar';
 import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 import { toggleStatusTab } from '../features/cart/cartSlice';
-import { useAppDispatch, useAppSelector } from '../hooks/store';
 import { PiShoppingCartBold, PiUserBold } from 'react-icons/pi';
 import { IoMenu } from 'react-icons/io5';
 import { useEffect, useRef, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../store';
 
 export const Navbar = () => {
   const { numItemsInCart } = useAppSelector((state) => state.cartState);
+  const user = useAppSelector((state) => state.users.user?.username);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLUListElement | null>(null);
 
@@ -80,9 +81,13 @@ export const Navbar = () => {
         </div>
 
         <div className='login-cart'>
-          <NavLink className='btn-login' to='/Login'>
-            <PiUserBold />
-          </NavLink>
+          {user ? (
+            <h3> Hola!, {user}</h3>
+          ) : (
+            <NavLink className='btn-login' to='/Login'>
+              <PiUserBold />
+            </NavLink>
+          )}
 
           <button type='button' className={`${numItemsInCart > 0 ? 'cart active' : 'cart'}`} onClick={handleOpenTabCart}>
             <div className='cart-counter'>

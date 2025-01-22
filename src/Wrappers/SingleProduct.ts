@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  padding: 5rem;
-  height: 80vh;
+  margin-top: var(--nav-height);
+  height: 100vh;
 
   .product-detail {
     display: grid;

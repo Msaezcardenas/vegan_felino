@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Wrapper } from '../Wrappers/ProductCard';
-//import img from '../assets/images/seitan-1.jpg';
 import { addItem, removeItem } from '../features/cart/cartSlice';
-import { useAppDispatch, useAppSelector } from '../hooks/store';
 import { CartItem } from '../utils/types';
 import { formatAmountRegex } from '../utils/formatAmount';
+import { useAppDispatch, useAppSelector } from '../store';
 
 interface CardProps {
   item: {

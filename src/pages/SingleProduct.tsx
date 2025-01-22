@@ -1,36 +1,29 @@
-// import { LoaderFunction, useLoaderData } from 'react-router-dom';
-// import { customFetch } from '../utils/customFetch';
-// import { SingleProductResponse } from '../utils/types';
+import { LoaderFunction, useLoaderData } from 'react-router-dom';
 import { Wrapper } from '../Wrappers/SingleProduct';
-import img from '../assets/images/seitan-1.jpg';
-// import { GiBiceps } from 'react-icons/gi';
-//import { LuBicepsFlexed } from 'react-icons/lu';
-//
-// import { LuVegan } from 'react-icons/lu';
+import { customFetch } from '../utils/customFetch';
+import { Product } from '../utils/types';
 
-// export const loader: LoaderFunction = async ({ params }): Promise<SingleProductResponse> => {
-//   const response = await customFetch(`/products/${params.id}`);
-//   console.log(response);
-//   return { ...response.data };
-// };
+export const loader: LoaderFunction = async ({ params }): Promise<Product> => {
+  const response = await customFetch<Product>(`/products/${params.id}`);
+  return response.data;
+};
 
 const SingleProduct = () => {
-  // const { data } = useLoaderData() as SingleProductResponse;
+  const product = useLoaderData() as Product;
+  console.log('--------->', product);
 
+  const { image, title, description, price } = product;
   return (
     <Wrapper>
       <div className='page-single-product'>
         <div className='product-detail'>
           <div className='container-img'>
-            <img src={img} />
+            <img src={`http://localhost:8080${image}`} />
           </div>
           <div className='detail'>
-            <h1> Seitan</h1>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi ducimus possimus, libero provident at eveniet et numquam animi quam
-              quis ullam soluta inventore non error necessitatibus facilis culpa earum laboriosam?
-            </p>
-            <h2> $10.500</h2>
+            <h1> {title}</h1>
+            <p>{description}</p>
+            <h2> ${price}</h2>
           </div>
         </div>
       </div>

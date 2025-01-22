@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
-  position: fixed;
+  position: sticky;
   height: var(--nav-height);
   width: 100%;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;

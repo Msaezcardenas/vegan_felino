@@ -13,6 +13,7 @@ export interface Product {
   stock: number;
   image: string;
   totalPrice: number;
+  unitType: string;
   __v: number;
 }
 

@@ -15,7 +15,6 @@ export const action: ActionFunction = async ({ request }) => {
     alert('Registrado');
     return redirect('/login');
   } catch (error) {
-    // const errorMsg = error instanceof AxiosError ? error.response?.data.error.message : 'Registration Failed';
     console.log(error);
     alert('Fail');
     return null;

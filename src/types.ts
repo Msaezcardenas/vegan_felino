@@ -16,3 +16,12 @@ export interface DataItem {
 export interface ApiResponse {
   data: DataItem[];
 }
+
+export type DecodedToken = {
+  first_name: string;
+  last_name: string;
+  email: string;
+  role: string;
+  exp: number; // Fecha de expiración del token
+  iat: number; // Fecha de emisión del token
+};
