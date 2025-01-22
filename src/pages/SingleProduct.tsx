@@ -40,7 +40,7 @@ const SingleProduct = () => {
       <div className='page-single-product'>
         <div className='product-detail'>
           <div className='container-img'>
-            <img src={`http://localhost:8080${image}`} />
+            <img src={`https://backend-ecommerce-production-4fe0.up.railway.app${image}`} />
           </div>
           <div className='detail'>
             <h1> {title}</h1>

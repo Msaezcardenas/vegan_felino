@@ -73,7 +73,11 @@ const Carrito = () => {
               <div className='cart' key={item.title}>
                 <div className='cart-item'>
                   <div className='cart-img'>
-                    <img src={`http://localhost:8080${item.image}`} alt='Seitan Tradicional' className='product-image' />
+                    <img
+                      src={`https://backend-ecommerce-production-4fe0.up.railway.app${item.image}`}
+                      alt='Seitan Tradicional'
+                      className='product-image'
+                    />
                   </div>
                   <div className='cart-info'>
                     <h2>{item.title}</h2>
