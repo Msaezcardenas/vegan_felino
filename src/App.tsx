@@ -1,4 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css'; // Importa los estilos
+import { ToastContainer } from 'react-toastify'; // Importa el contenedor de los toasts
 
 import { HomeLayout, Landing, Tienda, Recetas, PuntosDeVenta, Blog, Login, Register, DetailRecipe } from './pages';
 import { loader as loaderProduct } from './loaders/productLoader';
@@ -70,6 +72,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </>
+  );
 }
 export default App;

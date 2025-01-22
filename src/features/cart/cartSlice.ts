@@ -43,7 +43,6 @@ export const cartSlice = createSlice({
         }
         // La eliminación del ítem se realizará solo si su cantidad es 0 y ocurre en otro momento
         if (productFinded.amount <= 0) {
-          console.log('remove menor a cero');
           state.cartItems = state.cartItems.filter((item) => item.productID !== productID);
           state.totalCart -= Number(productFinded.price);
         }

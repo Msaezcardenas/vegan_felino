@@ -1,12 +1,13 @@
 import { ActionFunction, Form, Link, NavLink, redirect } from 'react-router-dom';
 import { Wrapper } from '../Wrappers/Login';
 import Logo from '../components/Logo';
-import { AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { customFetch } from '../utils/customFetch';
 import { loginUser } from '../features/user/userSlice';
 import { jwtDecode } from 'jwt-decode';
 import { DecodedToken } from '../types';
 import { ReduxStore } from '../store';
+import { toast } from 'react-toastify';
 
 export const action =
   (store: ReduxStore): ActionFunction =>
@@ -15,26 +16,29 @@ export const action =
     const data = Object.fromEntries(formData);
 
     try {
-      // Realiza la solicitud al backend
       const response: AxiosResponse = await customFetch.post('/users/login', data);
-
-      // Decodifica el token JWT
       const jwt = response.data.data;
       const decodedToken: DecodedToken = jwtDecode(jwt);
-      console.log(decodedToken);
-
-      // Guarda el token y el usuario en el estado global
       store.dispatch(
         loginUser({
           username: decodedToken.first_name,
           jwt,
         }),
       );
-
-      // Redirige al usuario
       return redirect('/');
     } catch (error) {
-      console.error(error);
+      if (axios.isAxiosError(error)) {
+        const errorMessage = error.response?.data?.message || 'Error desconocido';
+        toast.error(`${errorMessage}`, {
+          position: 'top-right',
+          autoClose: 3000,
+        });
+      } else {
+        toast.error('Hubo un problema con la solicitud.', {
+          position: 'top-right',
+          autoClose: 3000,
+        });
+      }
       return null;
     }
   };

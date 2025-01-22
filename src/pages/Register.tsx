@@ -3,20 +3,24 @@ import { Wrapper } from '../Wrappers/Register';
 import Logo from '../components/Logo';
 import { ActionFunction } from 'react-router-dom';
 import { customFetch } from '../utils/customFetch';
+import { toast } from 'react-toastify';
 
 export const action: ActionFunction = async ({ request }) => {
-  console.log('Ingresa a register');
-
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   try {
     await customFetch.post('/users/register', data);
-    console.log('Registrado');
-    alert('Registrado');
+    toast.success('¡Registro exitoso!', {
+      position: 'top-right',
+      autoClose: 3000,
+    });
     return redirect('/login');
   } catch (error) {
     console.log(error);
-    alert('Fail');
+    toast.error('Error al registrar. Intenta nuevamente.', {
+      position: 'top-right',
+      autoClose: 3000,
+    });
     return null;
   }
 };

@@ -9,7 +9,9 @@ function ErrorElement() {
   return (
     <Wrapper>
       <h1> Upsss! Lo siento, Hubo un error </h1>
-      <img src={errorImg} alt='error image' />
+      <div className='error-img'>
+        <img src={errorImg} alt='error image' />
+      </div>
     </Wrapper>
   );
 }

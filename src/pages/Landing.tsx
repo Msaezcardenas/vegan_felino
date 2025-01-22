@@ -9,13 +9,9 @@ const url = '/products';
 export const loader: LoaderFunction = async (): Promise<ProductsResponse> => {
   try {
     const response = await customFetch<ProductsResponse>(url);
-
-    console.log(response.data);
-
     return { ...response.data };
   } catch (error) {
     console.log(error);
-
     throw new Response('Error loading data', { status: 500 });
   }
 };

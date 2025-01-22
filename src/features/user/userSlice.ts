@@ -23,7 +23,6 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     loginUser: (state, action: PayloadAction<User>) => {
-      console.log('Payload recibido en loginUser:', action);
       const user = action.payload;
 
       state.user = user;
