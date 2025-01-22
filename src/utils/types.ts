@@ -2,6 +2,11 @@ export interface ProductsResponse {
   data: Product[];
 }
 
+export interface SingleProductsResponse {
+  message: string;
+  data: Product[];
+}
+
 export interface Product {
   _id: string;
   category: string;

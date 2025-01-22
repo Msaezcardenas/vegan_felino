@@ -13,7 +13,6 @@ export const Wrapper = styled.div`
     h1 {
       font-size: 24px;
     }
-    /* border-bottom: 1px solid #ccc; */
   }
   .close-button {
     position: fixed;
@@ -36,6 +35,8 @@ export const Wrapper = styled.div`
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo con sombra */
@@ -49,19 +50,20 @@ export const Wrapper = styled.div`
   .sidebar-overlay.open {
     opacity: 1;
     visibility: visible;
-    overflow: hidden;
     pointer-events: all;
   }
   .sidebar {
     position: fixed;
     top: 0;
+    right: -100%;
     width: 100%;
     height: 100%;
     background-color: var(--color-bg-light);
     box-shadow: var(--shadow-1);
     transition: right 0.8s ease;
     z-index: 1000;
-    overflow-y: auto;
+    overflow-x: hidden; /* Deshabilitar el scroll horizontal en el carrito */
+    overflow-y: auto; /* Habilitar solo el scroll vertical */
   }
 
   .sidebar-content {

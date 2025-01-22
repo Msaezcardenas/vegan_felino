@@ -24,16 +24,16 @@ const router = createBrowserRouter([
         loader: loaderProduct,
       },
       {
-        path: '/:id',
-        element: <SingleProduct />,
-        errorElement: <ErrorElement />,
-        loader: singleProductLoader,
-      },
-      {
         path: 'tienda',
         element: <Tienda />,
         loader: loaderProduct,
         errorElement: <ErrorElement />,
+      },
+      {
+        path: 'tienda/:id',
+        element: <SingleProduct />,
+        errorElement: <ErrorElement />,
+        loader: singleProductLoader,
       },
       {
         path: 'recetas',

@@ -17,7 +17,6 @@ html {
   color: var(--text-color);
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
 }
 
 :root {
@@ -80,16 +79,16 @@ html {
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100%;
 }
+
 body.no-scroll {
-  overflow: hidden; /* Deshabilita el scroll */
-  position: fixed; /* Fija la posición de la página */
-  width: 100%;
+  overflow: hidden; /* Desactiva el scroll vertical */
 }
 
 main {
   flex: 1;
+  overflow-y: auto;
 }
 
 a {

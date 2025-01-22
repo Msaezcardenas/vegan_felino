@@ -18,7 +18,6 @@ const Carrito = () => {
   };
 
   useEffect(() => {
-    // Agregar o remover la clase `no-scroll` en el <body>
     if (statusTab) {
       document.body.classList.add('no-scroll');
     } else {
@@ -26,24 +25,20 @@ const Carrito = () => {
     }
 
     return () => {
-      document.body.classList.remove('no-scroll'); // Limpieza por seguridad
+      document.body.classList.remove('no-scroll');
     };
   }, [statusTab]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target as Node) &&
-        statusTab // Solo cierra si está abierto
-      ) {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node) && statusTab) {
         dispatch(toggleStatusTab());
       }
     };
 
     window.addEventListener('click', handleClickOutside);
     return () => {
-      window.removeEventListener('click', handleClickOutside); // Limpieza del listener
+      window.removeEventListener('click', handleClickOutside);
     };
   }, [statusTab, dispatch]);
 
@@ -94,7 +89,7 @@ const Carrito = () => {
                 </div>
               </div>
             ))}
-            {totalCart > 0 ? (
+            {numItemsInCart > 0 ? (
               <div className='payment'>
                 <div className='total'>
                   <h2>Total:</h2>

@@ -45,18 +45,18 @@ export const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
-  useEffect(() => {
-    // Agregar o remover la clase `no-scroll` en el <body>
-    if (isMobileMenuOpen) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
+  // useEffect(() => {
+  //   // Agregar o remover la clase `no-scroll` en el <body>
+  //   if (isMobileMenuOpen) {
+  //     document.body.classList.add('no-scroll');
+  //   } else {
+  //     document.body.classList.remove('no-scroll');
+  //   }
 
-    return () => {
-      document.body.classList.remove('no-scroll'); // Limpieza por seguridad
-    };
-  }, [isMobileMenuOpen]);
+  //   return () => {
+  //     document.body.classList.remove('no-scroll'); // Limpieza por seguridad
+  //   };
+  // }, [isMobileMenuOpen]);
 
   return (
     <Wrapper>
@@ -82,7 +82,7 @@ export const Navbar = () => {
 
         <div className='login-cart'>
           {user ? (
-            <h3> Hola!, {user}</h3>
+            <h3> Hola, {user}!</h3>
           ) : (
             <NavLink className='btn-login' to='/Login'>
               <PiUserBold />

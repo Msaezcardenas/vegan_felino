@@ -52,9 +52,10 @@ export const Wrapper = styled.section`
     gap: 60px;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 720px) {
     .cards-container {
       grid-template-columns: 1fr 1fr;
+      gap: 50px;
     }
   }
 `;

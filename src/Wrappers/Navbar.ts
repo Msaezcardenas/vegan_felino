@@ -16,7 +16,7 @@ export const Wrapper = styled.nav`
     position: fixed;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
@@ -60,6 +60,7 @@ export const Wrapper = styled.nav`
   .nav-links.open {
     transform: translateX(0);
     transition: transform 0.3s ease-in-out;
+    background-color: var(--color-bg-light);
   }
 
   .nav-center {
@@ -188,12 +189,14 @@ export const Wrapper = styled.nav`
   }
 
   @media (min-width: 992px) {
+    padding: 0 5rem;
+
     .mobile-menu-btn {
       display: none;
     }
 
     .login-cart {
-      width: 80px;
+      width: 100px;
       justify-content: space-between;
     }
 

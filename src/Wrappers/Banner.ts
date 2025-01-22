@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   .swiper {
-    width: 80%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     overflow: hidden;
@@ -25,8 +25,9 @@ export const Wrapper = styled.div`
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: var(--color-secondary);
-    background-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-color: none;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -38,11 +39,17 @@ export const Wrapper = styled.div`
 
   .swiper-pagination-bullet {
     background: var(--color-primary);
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
   }
 
   .swiper-pagination-bullet-active {
     background: var(--color-primary);
+  }
+
+  @media (min-width: 992px) {
+    .swiper {
+      width: 80%;
+    }
   }
 `;

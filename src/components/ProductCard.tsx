@@ -43,7 +43,7 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
   return (
     <Wrapper>
       <div className='product-card'>
-        <Link to={`/${item._id}`}>
+        <Link to={`/tienda/${item._id}`} key={item._id}>
           <div className='product-info'>
             <h2>{item.title}</h2>
             <p className='product-description'>{item.description}</p>

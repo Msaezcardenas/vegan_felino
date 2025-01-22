@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 300px;
-    height: 200px;
+    height: 300px;
   }
 
   .img-container {
@@ -113,6 +113,11 @@ export const Wrapper = styled.div`
   .quantity {
     font-size: 16px;
     font-weight: bold;
+  }
+  @media (min-width: 720px) {
+    .product-card {
+      height: 280px;
+    }
   }
 
   @media (min-width: 992px) {
