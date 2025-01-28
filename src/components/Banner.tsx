@@ -4,8 +4,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import banner from '../assets/images/banner.jpeg';
-import banner2 from '../assets/images/banner2.jpeg';
-import banner3 from '../assets/images/banner3.jpeg';
+import banner2 from '../assets/images/banner3.jpeg';
+import banner3 from '../assets/images/b__veganfelino.jpeg';
 import { Wrapper } from '../Wrappers/Banner';
 
 const Carousel = () => {
@@ -18,7 +18,7 @@ const Carousel = () => {
         slidesPerView={1}
         className='swiper'
         autoplay={{
-          delay: 3000, // Tiempo entre diapositivas (en milisegundos)
+          delay: 5000, // Tiempo entre diapositivas (en milisegundos)
           disableOnInteraction: false, // Mantener autoplay aunque el usuario interactúe
         }}
         loop={true} // Permitir que el carrusel sea infinito
