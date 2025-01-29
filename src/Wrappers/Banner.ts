@@ -51,5 +51,11 @@ export const Wrapper = styled.div`
     .swiper {
       width: 80%;
     }
+
+    .swiper-slide .slide_3 {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
   }
 `;

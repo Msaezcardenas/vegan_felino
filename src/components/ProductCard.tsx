@@ -18,7 +18,6 @@ interface CardProps {
 
 const ProductCard: React.FC<CardProps> = ({ item }) => {
   const dispatch = useAppDispatch();
-  console.log(item);
 
   const cartItem = useAppSelector((state) => state.cartState.cartItems.find((product) => product.productID === item._id));
   const amount = cartItem ? cartItem.amount : 0;
@@ -52,7 +51,7 @@ const ProductCard: React.FC<CardProps> = ({ item }) => {
           </div>
         </Link>
         <div className='img-container'>
-          <img src={`https://backend-ecommerce-production-4fe0.up.railway.app${item.image}`} alt='Seitan Tradicional' className='product-image' />
+          <img src={`${import.meta.env.VITE_API_URL}${item.image}`} alt='Seitan Tradicional' className='product-image' />
           {amount === 0 ? (
             <button className='btn-product' onClick={addToCart}>
               +
