@@ -28,13 +28,13 @@ const Carousel = () => {
         loop={true}
       >
         <SwiperSlide>
-          <img src={banner} alt='Slide 1' />
+          <img src={isMobile ? banner2Mobile : banner2} alt='Slide 1' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={isMobile ? banner2Mobile : banner2} alt='Slide 2' />
+          <img src={isMobile ? banner3mobile : banner3} alt='Slide 2' className='slide_3' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={isMobile ? banner3mobile : banner3} alt='Slide 3' className='slide_3' />
+          <img src={banner} alt='Slide 3' />
         </SwiperSlide>
       </Swiper>
     </Wrapper>
