@@ -33,6 +33,7 @@ export const cartSlice = createSlice({
     removeItem: (state, action: PayloadAction<string>) => {
       const productID = action.payload;
       const productFinded = state.cartItems.find((item) => item.productID === productID);
+
       if (!productFinded) return;
       if (productFinded) {
         if (productFinded.amount > 0) {

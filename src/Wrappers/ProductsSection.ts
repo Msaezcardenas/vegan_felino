@@ -8,6 +8,7 @@ export const Wrapper = styled.section`
   align-items: center;
   text-align: center;
   margin-bottom: 7rem;
+  min-height: 100vh;
 
   .title {
     padding: 4rem 0;

@@ -16,7 +16,7 @@ export const Navbar = () => {
 
   const dispatch = useAppDispatch();
   const handleOpenTabCart = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.stopPropagation(); // Detiene la propagación del evento
+    event.stopPropagation();
     dispatch(toggleStatusTab());
   };
 
@@ -44,19 +44,6 @@ export const Navbar = () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, [isMobileMenuOpen]);
-
-  // useEffect(() => {
-  //   // Agregar o remover la clase `no-scroll` en el <body>
-  //   if (isMobileMenuOpen) {
-  //     document.body.classList.add('no-scroll');
-  //   } else {
-  //     document.body.classList.remove('no-scroll');
-  //   }
-
-  //   return () => {
-  //     document.body.classList.remove('no-scroll'); // Limpieza por seguridad
-  //   };
-  // }, [isMobileMenuOpen]);
 
   return (
     <Wrapper>
