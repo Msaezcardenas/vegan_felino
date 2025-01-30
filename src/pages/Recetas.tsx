@@ -6,6 +6,7 @@ const Recetas = () => {
     <Wrapper>
       <div className='page'>
         <h1>Recetas</h1>
+        <h2> En construccion...</h2>
         <div className='recetas-container'>
           <RecetasCard />
           <RecetasCard />
